@@ -1,0 +1,4 @@
+{
+  "icon": "HomeIcon",
+  "pages": ["index", "---Information---", "system", "play", "rules", "errors"]
+}

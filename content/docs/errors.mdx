@@ -1,0 +1,49 @@
+---
+title: Bug fixes
+full: true
+icon: BadgeX
+---
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Snippet } from "@nextui-org/snippet";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { Link } from "@nextui-org/link";
+
+<Accordions>
+    <Accordion title={`How to update the client.`}>
+        Download the file below and move it to the BepInEx/plugins folder with a replacement.
+        <Files>
+            <Link
+                href="https://s3.dreamrusttop.ru/dream/file/DreamMod.dll"
+                isExternal={true}
+            >
+                <File name="DreamMod.dll" />
+            </Link>
+        </Files>
+    </Accordion>
+    <Accordion title={`Fixing the error "No servers" and if you connect via IP, the message "Connection attempt failed" appears`}>
+        You need to disable your antivirus (Windows defender) or others.
+    
+        If you are from Ukraine, connect a VPN, because our hosting is blocked by your providers
+    </Accordion>
+    <Accordion title={`Fixing the error “the Launcher just blinks for a second and disappears”`}>
+        You need to disable your antivirus (Windows defender) or others.
+
+        You need to install the Library [Evergreen Автономный installer x64](https://developer.microsoft.com/ru-ru/microsoft-edge/webview2)
+        ![alt text](https://s3.dreamrusttop.ru/dream/images/error-1.webp)
+    </Accordion>
+    <Accordion title={`Fixing the "graphics drop to 0" bug`}>
+        Let's go to cfg/client.cfg
+
+        Add a line <Snippet className='p-0' classNames={{ pre: "p-0 !m-0" }} color="warning">graphics.quality "2"</Snippet> (where 2 is graphics quality)
+        ![alt text](https://s3.dreamrusttop.ru/dream/images/error-2.webp)
+    </Accordion>
+    <Accordion title={`Bug fix "Bip bip boop"`}>
+        You need to disable your antivirus (Windows defender) or others.
+
+        Repack the files marked in the screenshot (preferably via [7zip](https://7-zip.org/download.html))
+    </Accordion>
+    <Accordion title={`I launched the launcher and wrote “Opening bundles” and that’s it`}>
+        You need to open Steam and restart the game.
+    </Accordion>
+</Accordions>

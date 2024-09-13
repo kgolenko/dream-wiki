@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --background: 0, 0%, 11%;
+  --foreground: 0, 0%, 11%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 47.4% 11.2%;
+} */
+/* hsl(0, 0%, 17%) */
+
+.download-button {
+  background: linear-gradient(0deg, #9c94ff 0%, #776ee0 100%);
+}
+
+.modal_download {
+  backdrop-filter: blur(4px);
+  background: rgba(30, 32, 38, 0.9);
+}

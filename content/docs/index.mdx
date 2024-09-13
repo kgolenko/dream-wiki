@@ -1,0 +1,40 @@
+---
+title: Information Center
+full: true
+icon: House
+---
+
+import { MainHeader } from '../../app/components/ui/MainHeader'
+import CustomCard from '../../app/components/ui/CustomCard'
+ 
+<MainHeader header="General category" description="Here you can find any information about the Dream server and its systems" />
+
+<Cards>
+  <CustomCard
+    icon={"⚙️"}
+    href="/en/system"
+    title="System Requirements"
+    description="Check if your computer is suitable for playing on our server"
+  />
+  <CustomCard
+    icon={"🖥️"}
+    href="/en/play"
+    title="How to start play"
+    description="A detailed guide on how to start playing on our project"
+  />
+  <CustomCard
+    icon={"📚"}
+    href="/en/rules"
+    title="Rules"
+    description="Ignorance is no excuse"
+  />
+  <CustomCard
+    icon={"🚫"}
+    href="/en/error"
+    title="Errors with the game"
+    description="We know the answer to 90% of mistakes"
+  />
+</Cards>
+
+<Callout type="error">The site is under development, there may be errors.</Callout>
+

@@ -1,0 +1,52 @@
+---
+title: Map wipe
+description: Map wipe
+---
+
+# Нужно поменять ссылку на карту
+"C:\Users\Administrator\Desktop\dreamrust225\server\server\my_server_identity\cfg\server.cfg"
+
+# Нужно удалить эти файлы 
+"C:\Users\Administrator\Desktop\dreamrust225\server\server\my_server_identity\25.08---225.196.sav"
+"C:\Users\Administrator\Desktop\dreamrust225\server\server\my_server_identity\25.08---225.map"
+"C:\Users\Administrator\Desktop\dreamrust225\server\server\my_server_identity\companion.id"
+"C:\Users\Administrator\Desktop\dreamrust225\server\server\my_server_identity\player.deaths.3.db"
+
+
+# Нужно поменять дату 
+C:\Users\Administrator\Desktop\dreamrust225\server\Start.bat
+
+"C:\Users\Administrator\Desktop\dreamrust225\server\oxide\data\BestKits\BestKits_Data.json"
+
+"C:\Users\Administrator\Desktop\dreamrust225\server\oxide\data\DShop\CurrentDiscount.json"
+"C:\Users\Administrator\Desktop\dreamrust225\server\oxide\data\DShop\PlayersBalance.json"
+"C:\Users\Administrator\Desktop\dreamrust225\server\oxide\data\DShop\UnblockTime.json"
+
+```
+@echo off
+cls
+:start
+echo Starting server...
+chcp 65001
+RustDedicated.exe -batchmode -nographics ^ +server.eac 0 ^ +server.secure false ^+server.encryption false ^
++server.ip 0.0.0.0 ^
++server.port 35222 ^
++rcon.port 36004 ^
++rcon.password "111111" ^
++server.maxplayers 150 ^
++server.hostname "DREAM RUST | Main | Wipe: 25.08" ^
++server.identity "my_server_identity" ^
++server.level "Procedural Map" ^
++server.seed 124595873 ^
++server.worldsize 3200 ^
++server.saveinterval 300 ^
++server.description "DREAM RUST \n\nvk.com/dreamrusttop" ^
++server.headerimage "https://gspics.org/images/2024/08/20/I8dNcw.png" ^
++server.url "https://vk.com/dreamrusttop"
+
+echo.
+echo Restarting server...
+timeout /t 10
+echo.
+goto start
+```

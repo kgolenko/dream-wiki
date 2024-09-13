@@ -1,0 +1,46 @@
+---
+title: Как начать играть
+icon: SquareArrowDown
+full: false
+---
+
+import DownloadGame from '../../app/components/ui/DownloadGame'
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Code } from "@nextui-org/code";
+import { Snippet } from "@nextui-org/snippet";
+
+![alt text](https://s3.dreamrusttop.ru/dream/images/wiki_banner.png)
+
+<Callout>Не забудьте проверить ваши системные требования</Callout>
+
+<div className="steps">
+  <div className="step">
+    ### Скачать игру
+    Для начала вам нужно скачать игру, вы можете выбрать удобный для вас вариант ниже
+    <DownloadGame download='Скачать' label='Выбери'/>
+  </div>
+  <div className="step">
+    ### Распоковать игру
+    Для того чтобы распоковать игру, нужно испольвать WinRar или 7zip.
+
+    Мы рекомендуем использовать [7zip](https://www.7-zip.org/).
+  </div>
+  <div className="step">
+    ### Запустить игру
+
+    <Callout>Не забудьте запустить Steam</Callout>
+
+    Зайдите в папку с игрой и запустите <Code color="success">RustClient.exe</Code>
+  </div>
+  <div className="step">
+    ### Подключиться к серверу
+    Перейдите во вкладку Сервера и выберите нужный ваш сервер
+
+    Также вы можете открыть консоль через <Code color="primary">F1</Code> и подключиться напрямую
+
+    IP адресса сервером:
+
+    1. Combat Server - <Snippet className='p-0' classNames={{ pre: "p-0 !m-0" }} color="warning">connect 185.207.214.140:35220</Snippet>
+    2. Main Server - <Snippet className='p-0' classNames={{ pre: "p-0 !m-0" }} color="warning">connect 185.207.214.140:35222</Snippet>
+  </div>
+</div>

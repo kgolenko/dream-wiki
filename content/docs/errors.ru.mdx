@@ -1,0 +1,49 @@
+---
+title: Исправление ошибок
+full: true
+icon: BadgeX
+---
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Snippet } from "@nextui-org/snippet";
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { Link } from "@nextui-org/link";
+
+<Accordions>
+    <Accordion title={`Как обновить клиент.`}>
+        Скачать файл ниже и перенести его в папку BepInEx/plugins с заменой.
+        <Files>
+            <Link
+                href="https://s3.dreamrusttop.ru/dream/file/DreamMod.dll"
+                isExternal={true}
+            >
+                <File name="DreamMod.dll" />
+            </Link>
+        </Files>
+    </Accordion>
+    <Accordion title={`Исправление ошибки "Нет серверов" и если подключаться по айпи, появляется надпись "Connection attempt failed"`}>
+        Нужно отключить антивирус (Windows defender) или др.
+    
+        В случае, если вы с Украины, подключить VPN, потому что со стороны ваших провайдеров наш хостинг заблокирован
+    </Accordion>
+    <Accordion title={`Исправление ошибки "просто моргает на секунду Лаунчер  и пропадает"`}>
+        Нужно отключить антивирус (Windows defender) или др.
+
+        Нужно установить Библиотеку [Evergreen Автономный установщик x64](https://developer.microsoft.com/ru-ru/microsoft-edge/webview2)
+        ![alt text](https://s3.dreamrusttop.ru/dream/images/error-1.webp)
+    </Accordion>
+    <Accordion title={`Исправление бага "слета графики на 0"`}>
+        Заходим в cfg/client.cfg
+
+        Добавляем строчку <Snippet className='p-0' classNames={{ pre: "p-0 !m-0" }} color="warning">graphics.quality "2"</Snippet> (где 2 - качество графики)
+        ![alt text](https://s3.dreamrusttop.ru/dream/images/error-2.webp)
+    </Accordion>
+    <Accordion title={`Исправление ошибки "Bip bip boop"`}>
+        Нужно отключить антивирус (Windows defender) или др.
+
+        Перераспаковать файлы отмеченные на скриншоте (желательно через [7zip](https://7-zip.org/download.html))
+    </Accordion>
+    <Accordion title={`Запустил лаунчер и пишет "Opening bundles" и все`}>
+        Нужно открыть стим и перезапустить игру.
+    </Accordion>
+</Accordions>
