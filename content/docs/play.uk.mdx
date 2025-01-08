@@ -5,22 +5,58 @@ full: false
 ---
 
 import DownloadGame from '../../app/components/ui/DownloadGame'
+import ImageCard from '../../app/components/ui/ImageCard'
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Code } from "@nextui-org/code";
+import { Snippet } from "@nextui-org/snippet";
 
 ![alt text](https://s3.dreamrusttop.ru/dream/images/wiki_banner.png)
 
- 
-# 1. Скачать игру
-Для начала вам нужно скачать игру, вы можете выбрать удобный для вас вариант ниже
+<Callout>Не забудьте перевірити ваші системні вимоги</Callout>
 
-<DownloadGame download='Скачать' label='Выбери'/>
+<div className="steps">
+  <div className="step">
+    ### Завантажити гру
+    Для початку вам потрібно завантажити гру, ви можете вибрати зручний для вас варіант нижче
+    <DownloadGame download='Скачать' label='Выбери'/>
+  </div>
+  <div className="step">
+    ### Розпакувати гру
+    Для того щоб розпакувати гру, потрібно використовувати WinRar або 7zip.
 
-# 2. Распоковать игру
-Для того чтобы распоковать игру, нужно испольвать WinRar или 7zip.
+    Ми рекомендуємо використовувати [7zip](https://www.7-zip.org/).
+  </div>
+  <div className="step">
+    ### Запустити гру
 
-Мы рекомендуем использовать [7zip](https://www.7-zip.org/).
+    <Callout>Не забудьте запустити Steam</Callout>
 
-<Callout>Hello World</Callout>
+    Зайдіть у папку з грою і запустіть <Code color="success">Dream.exe</Code>
 
-<Callout title="Минимальные системные требования" type="warn">
-  Hello World
-</Callout>
+    У вікні, що відкрилося, натисніть на шестірню
+
+    <ImageCard imageUrl="https://s3.dreamrusttop.ru/dream/images/launcher_start.png" width={100} height={200} />
+
+    Виберіть шлях до гри
+
+    <ImageCard imageUrl="https://s3.dreamrusttop.ru/dream/images/launcher_settings.png" width={100} height={200} />
+
+    Шлях має бути приблизно таким: (це приклад, ваш шлях може бути іншим)
+    <ImageCard imageUrl="https://s3.dreamrusttop.ru/dream/images/launcher_path.png" width={1200} height={150} />
+
+    Натисніть на кнопку Зелене коло і дочекайтеся перевірки файлів гри, після цього гра запуститься
+
+    <ImageCard imageUrl="https://s3.dreamrusttop.ru/dream/images/launcher_load.png" width={100} height={200} />
+  </div>
+  <div className="step">
+    ### Підключитися до сервера
+    Перейдіть у вкладку Сервера і виберіть потрібний вам сервер
+
+    Також ви можете відкрити консоль через <Code color="primary">F1</Code> і під'єднатися напряму
+
+    IP адреси сервером:
+
+    1. Combat Server - <Snippet className='p-0' classNames={{ pre: "p-0 !m-0" }} color="warning">connect 185.207.214.140:35220</Snippet>
+    2. Main Server - <Snippet className='p-0' classNames={{ pre: "p-0 !m-0" }} color="warning">connect 185.207.214.140:35222</Snippet>
+  </div>
+</div>

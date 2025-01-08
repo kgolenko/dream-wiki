@@ -8,13 +8,14 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { Snippet } from "@nextui-org/snippet";
 import { File, Folder, Files } from 'fumadocs-ui/components/files';
 import { Link } from "@nextui-org/link";
+import { Code } from "@nextui-org/code";
 
 <Accordions>
     <Accordion title={`Как обновить клиент.`}>
         Скачать файл ниже и перенести его в папку BepInEx/plugins с заменой.
         <Files>
             <Link
-                href="https://s3.dreamrusttop.ru/dream/file/DreamMod.dll"
+                href="https://storage.dreamrusttop.ru/dream/data_game/BepInEx/plugins/DreamMod.dll"
                 isExternal={true}
             >
                 <File name="DreamMod.dll" />
@@ -32,18 +33,50 @@ import { Link } from "@nextui-org/link";
         Нужно установить Библиотеку [Evergreen Автономный установщик x64](https://developer.microsoft.com/ru-ru/microsoft-edge/webview2)
         ![alt text](https://s3.dreamrusttop.ru/dream/images/error-1.webp)
     </Accordion>
-    <Accordion title={`Исправление бага "слета графики на 0"`}>
-        Заходим в cfg/client.cfg
-
-        Добавляем строчку <Snippet className='p-0' classNames={{ pre: "p-0 !m-0" }} color="warning">graphics.quality "2"</Snippet> (где 2 - качество графики)
-        ![alt text](https://s3.dreamrusttop.ru/dream/images/error-2.webp)
-    </Accordion>
-    <Accordion title={`Исправление ошибки "Bip bip boop"`}>
-        Нужно отключить антивирус (Windows defender) или др.
-
-        Перераспаковать файлы отмеченные на скриншоте (желательно через [7zip](https://7-zip.org/download.html))
-    </Accordion>
     <Accordion title={`Запустил лаунчер и пишет "Opening bundles" и все`}>
         Нужно открыть стим и перезапустить игру.
+    </Accordion>
+    <Accordion title={`Если у вас зависает/вылетает игра после Waiting for background video`}>
+        Вам нужно установить пакеты Visual C++
+        <Files>
+            <Link
+                href="https://storage.dreamrusttop.ru/dream/data_launcher/Visual-C-Runtimes-All-in-One-Nov-2024.zip"
+                isExternal={true}
+            >
+                <File name="Visual-C-Runtimes-All-in-One-Nov-2024.zip" />
+            </Link>
+        </Files>
+        Распакуйте архив в отдельную папку и запустите <Code color="success">install_all.bat</Code>
+    </Accordion>
+    <Accordion title={`Если вы играли на проекте BummerRust и у вас нет доступа к серверу`}>
+        <Callout type="danger">
+            ### ⚠️ **Внимание! Важное предупреждение!**
+            
+            ### Проект BummerRust распространяет вредоносное ПО через свой клиент игры. Настоятельно рекомендуем не играть на данном проекте, так как это может привести к заражению вашего компьютера вирусами и потере доступа к другим игровым серверам.
+        </Callout>
+
+        ### Часть 1: Удаление правил брандмауэра
+        1. Откройте "Брандмауэр защитника Windows" через поиск <Code color="primary">(Win + Q)</Code>
+        2. Нажмите слева "Дополнительные параметры"
+        3. Выберите "Правила для исходящего подключения"
+        4. Найдите правило "block ip...." (обычно находится в самом верху)
+        5. Выделите все IP адреса:
+           - Кликните ЛКМ по первому адресу
+           - Пролистайте до конца списка
+           - Зажмите <Code color="primary">SHIFT</Code> и кликните ЛКМ по последнему адресу
+        6. Нажмите кнопку «Удалить»
+
+        ### Часть 2: Удаление вредоносного файла
+        1. Нажмите <Code color="primary">Win + R</Code>
+        2. Введите команду <Code color="warning">%temp%</Code>
+        3. В открывшейся папке найдите файл <Code color="danger">dllhost32.exe</Code>
+        4. Удалите этот файл
+
+        <Callout>**Важно**: Файл dllhost32.exe является вредоносным и используется для управления заблокированными IP-адресами в вашей системе</Callout>
+    </Accordion>
+    <Accordion title={`Не прогружаются скины (хотя они скачаны)`}>
+        1. Убирайте кириллицу из пути к папке с игрой,
+        2. Имя пользователя Windows не должно содержать кириллицу,
+        3. Убирайте атрибут "только чтение" с папки с игрой
     </Accordion>
 </Accordions>

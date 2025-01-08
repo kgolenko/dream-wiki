@@ -1,6 +1,6 @@
 {
   "name": "dream-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "kgolenko",
   "scripts": {
     "build": "next build",

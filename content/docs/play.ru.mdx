@@ -5,6 +5,7 @@ full: false
 ---
 
 import DownloadGame from '../../app/components/ui/DownloadGame'
+import ImageCard from '../../app/components/ui/ImageCard'
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Code } from "@nextui-org/code";
 import { Snippet } from "@nextui-org/snippet";
@@ -30,7 +31,22 @@ import { Snippet } from "@nextui-org/snippet";
 
     <Callout>Не забудьте запустить Steam</Callout>
 
-    Зайдите в папку с игрой и запустите <Code color="success">RustClient.exe</Code>
+    Зайдите в папку с игрой и запустите <Code color="success">Dream.exe</Code>
+
+    В открывшемся окне нажмите на шестеренку
+
+    <ImageCard imageUrl="https://s3.dreamrusttop.ru/dream/images/launcher_start.png" width={100} height={200} />
+
+    Выберите путь к игре
+
+    <ImageCard imageUrl="https://s3.dreamrusttop.ru/dream/images/launcher_settings.png" width={100} height={200} />
+
+    Путь должен быть примерно таким: (это пример, ваш путь может быть другим)
+    <ImageCard imageUrl="https://s3.dreamrusttop.ru/dream/images/launcher_path.png" width={1200} height={150} />
+
+    Нажмите на кнопку Зеленый круг и дождитесь проверки файлов игры, после этого игра запустится
+
+    <ImageCard imageUrl="https://s3.dreamrusttop.ru/dream/images/launcher_load.png" width={100} height={200} />
   </div>
   <div className="step">
     ### Подключиться к серверу

@@ -1,5 +1,5 @@
 ---
-title: Bug fixes
+title: Fixing Errors
 full: true
 icon: BadgeX
 ---
@@ -8,42 +8,75 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { Snippet } from "@nextui-org/snippet";
 import { File, Folder, Files } from 'fumadocs-ui/components/files';
 import { Link } from "@nextui-org/link";
+import { Code } from "@nextui-org/code";
 
 <Accordions>
     <Accordion title={`How to update the client.`}>
-        Download the file below and move it to the BepInEx/plugins folder with a replacement.
+        Download the file below and transfer it to the BepInEx/plugins folder, replacing the old file.
         <Files>
             <Link
-                href="https://s3.dreamrusttop.ru/dream/file/DreamMod.dll"
+                href="https://storage.dreamrusttop.ru/dream/data_game/BepInEx/plugins/DreamMod.dll"
                 isExternal={true}
             >
                 <File name="DreamMod.dll" />
             </Link>
         </Files>
     </Accordion>
-    <Accordion title={`Fixing the error "No servers" and if you connect via IP, the message "Connection attempt failed" appears`}>
-        You need to disable your antivirus (Windows defender) or others.
-    
-        If you are from Ukraine, connect a VPN, because our hosting is blocked by your providers
-    </Accordion>
-    <Accordion title={`Fixing the error “the Launcher just blinks for a second and disappears”`}>
-        You need to disable your antivirus (Windows defender) or others.
+    <Accordion title={`Fixing the "No servers" error and the "Connection attempt failed" message when connecting by IP.`}>
+        Disable your antivirus (Windows Defender or others).
 
-        You need to install the Library [Evergreen Автономный installer x64](https://developer.microsoft.com/ru-ru/microsoft-edge/webview2)
+        If you are in Ukraine, use a VPN, as our hosting is blocked by your providers.
+    </Accordion>
+    <Accordion title={`Fixing the error "Launcher blinks for a second and disappears."`}>
+        Disable your antivirus (Windows Defender or others).
+
+        Install the [Evergreen Standalone Installer x64](https://developer.microsoft.com/en-us/microsoft-edge/webview2).
         ![alt text](https://s3.dreamrusttop.ru/dream/images/error-1.webp)
     </Accordion>
-    <Accordion title={`Fixing the "graphics drop to 0" bug`}>
-        Let's go to cfg/client.cfg
-
-        Add a line <Snippet className='p-0' classNames={{ pre: "p-0 !m-0" }} color="warning">graphics.quality "2"</Snippet> (where 2 is graphics quality)
-        ![alt text](https://s3.dreamrusttop.ru/dream/images/error-2.webp)
+    <Accordion title={`Launcher stuck at "Opening bundles" and nothing happens.`}>
+        Open Steam and restart the game.
     </Accordion>
-    <Accordion title={`Bug fix "Bip bip boop"`}>
-        You need to disable your antivirus (Windows defender) or others.
-
-        Repack the files marked in the screenshot (preferably via [7zip](https://7-zip.org/download.html))
+    <Accordion title={`Game freezes/crashes after "Waiting for background video."`}>
+        You need to install Visual C++ packages.
+        <Files>
+            <Link
+                href="https://storage.dreamrusttop.ru/dream/data_launcher/Visual-C-Runtimes-All-in-One-Nov-2024.zip"
+                isExternal={true}
+            >
+                <File name="Visual-C-Runtimes-All-in-One-Nov-2024.zip" />
+            </Link>
+        </Files>
+        Extract the archive to a separate folder and run <Code color="success">install_all.bat</Code>.
     </Accordion>
-    <Accordion title={`I launched the launcher and wrote “Opening bundles” and that’s it`}>
-        You need to open Steam and restart the game.
+    <Accordion title={`If you played on the BummerRust project and no longer have access to the server.`}>
+        <Callout type="danger">
+            ### ⚠️ **Attention! Important warning!**
+            
+            ### The BummerRust project distributes malicious software through its game client. We strongly recommend not playing on this project, as it may infect your computer with viruses and lead to loss of access to other game servers.
+        </Callout>
+
+        ### Part 1: Removing firewall rules
+        1. Open "Windows Defender Firewall" via search <Code color="primary">(Win + Q)</Code>.
+        2. Click "Advanced settings" on the left.
+        3. Select "Outbound Rules."
+        4. Find the rule "block ip...." (usually at the top).
+        5. Select all IP addresses:
+           - Left-click on the first address.
+           - Scroll to the end of the list.
+           - Hold <Code color="primary">SHIFT</Code> and left-click the last address.
+        6. Click the "Delete" button.
+
+        ### Part 2: Removing the malicious file
+        1. Press <Code color="primary">Win + R</Code>.
+        2. Enter the command <Code color="warning">%temp%</Code>.
+        3. In the opened folder, find the file <Code color="danger">dllhost32.exe</Code>.
+        4. Delete this file.
+
+        <Callout>**Important**: The dllhost32.exe file is malicious and used to manage blocked IP addresses in your system.</Callout>
+    </Accordion>
+    <Accordion title={`Skins not loading (even though they are downloaded).`}>
+        1. Remove Cyrillic characters from the game folder path.
+        2. Ensure your Windows username does not contain Cyrillic characters.
+        3. Remove the "read-only" attribute from the game folder.
     </Accordion>
 </Accordions>
